@@ -95,6 +95,33 @@ def printOrderBook():
 	print(f"{'-' * 20}" + '+' + f"{'-' * 20}" + '+' + f"{'-' * 20}")
 	[print(f'{eval(i[0]):20.8f}|{formatReal(eval(i[1])):>20s}|{formatReal(eval(i[1]) / eval(i[0])):>20s}') for i in retJson['xbt-brl']]
 
+def cancelOrder():
+	pass
+
+def addWithdrawAddress():
+	pass
+
+def createOrder():
+	pass
+
+def generateNewDepositAddress():
+	pass
+
+def getAccountStatement():
+	pass
+
+def getAccountInfo():
+	pass
+
+def getOrders():
+	pass
+
+def informDeposit():
+	pass
+
+def requestWithdraw():
+	pass
+
 if __name__ == '__main__':
 	locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
@@ -109,6 +136,25 @@ if __name__ == '__main__':
 
 			if printOrderBook() == False:
 				print('Order Book erro.')
+
+		elif sys.argv[1] == '-aw':
+			addWithdrawAddress()
+		elif sys.argv[1] == '-c':
+			cancelOrder()
+		elif sys.argv[1] == '-co':
+			createOrder()
+		elif sys.argv[1] == '-da':
+			generateNewDepositAddress()
+		elif sys.argv[1] == '-as':
+			getAccountStatement()
+		elif sys.argv[1] == '-ai':
+			getAccountInfo()
+		elif sys.argv[1] == '-go':
+			getOrders()
+		elif sys.argv[1] == '-id':
+			informDeposit()
+		elif sys.argv[1] == '-rw':
+			requestWithdraw()
 
 	elif len(sys.argv) == 4:
 
