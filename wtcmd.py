@@ -10,13 +10,22 @@ WTValidAssets = ['BRL-XBT', 'XBT-BRL']
 
 def printUsage(exec: str):
 	print('Walltime command line')
-	print('-mi\t\tMarket Info')
-	print('-ob\t\tOrder Book')
-	print('-lt\t\tLast Trade')
+	print('-mi\t\tMarket info')
+	print('-ob\t\tOrder book')
+	print('-lt\t\tLast trades')
 	print(f'\t\t\t{exec} -lt [ASSET] [DATE]')
 	print('\t\t\t\tASSET = Walltime valid assets')
 	print('\t\t\t\tDATE = Last date (YYYY MM DD 24h)')
 	print(f'\t\t\tSample: {exec} -lt BRL-XBT \"2022 03 01 16\"')
+	print('-aw\t\tAdd withdraw address')
+	print('-c\t\tCancel order')
+	print('-co\t\tCreate order')
+	print('-da\t\tGenerate new deposit address')
+	print('-as\t\tGet account statement')
+	print('-ai\t\tGet account info')
+	print('-go\t\tGet orders')
+	print('-id\t\tInform deposit')
+	print('-rw\t\tRequest withdraw')
 
 	print(f'\nWalltime valid asstes: {WTValidAssets}')
 
