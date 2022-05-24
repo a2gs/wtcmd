@@ -87,7 +87,7 @@ def printOrderBook():
 	buy  = retJson['xbt-brl']
 
 	print(f'{"COMPRA":^63s}{"VENDA":^63s}\n')
-	print(f'{"VALOR (R$)":^20s}|{"QTD (BTC)":^20s}|{"TOTAL (R$)":^20s} || {"VALOR (BTC)":^20s}|{"QTD (R$)":^20s}|{"TOTAL (R$)":^20s}')
+	print(f'{"VALOR (R$)":^20s}|{"QTD (BTC)":^20s}|{"TOTAL (R$)":^20s}||{"VALOR (BTC)":^20s}|{"QTD (R$)":^20s}|{"TOTAL (R$)":^20s}')
 	print('-'*126)
 	[print(f'{formatReal(eval(a[0])):>20s}|{eval(a[1]):20.8f}|{formatReal(eval(a[0]) / eval(a[1])):>20s}||{eval(b[1]):20.8f}|{formatReal(eval(b[0])):>20s}|{formatReal(eval(b[0]) / eval(b[1])):>20s}') for a, b in zip(sell, buy)]
 
