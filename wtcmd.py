@@ -83,17 +83,13 @@ def printOrderBook():
 	if ret == False:
 		return False
 
-	print(f'{"COMPRA":^60s}')
-	print(f'{"VALOR (R$)":^20s}|{"QTD (BTC)":^20s}|{"TOTAL (R$)":^20s}')
-	print(f"{'-' * 20}" + '+' + f"{'-' * 20}" + '+' + f"{'-' * 20}")
-	[print(f'{formatReal(eval(i[0])):>20s}|{eval(i[1]):20.8f}|{formatReal(eval(i[0]) / eval(i[1])):>20s}') for i in retJson['brl-xbt']]
+	sell = retJson['brl-xbt']
+	buy  = retJson['xbt-brl']
 
-	print('\n')
-
-	print(f'{"VENDA":^60s}')
-	print(f'{"VALOR (BTC)":^20s}|{"QTD (R$)":^20s}|{"TOTAL (R$)":^20s}')
-	print(f"{'-' * 20}" + '+' + f"{'-' * 20}" + '+' + f"{'-' * 20}")
-	[print(f'{eval(i[0]):20.8f}|{formatReal(eval(i[1])):>20s}|{formatReal(eval(i[1]) / eval(i[0])):>20s}') for i in retJson['xbt-brl']]
+	print(f'{"COMPRA":^63s}{"VENDA":^63s}\n')
+	print(f'{"VALOR (R$)":^20s}|{"QTD (BTC)":^20s}|{"TOTAL (R$)":^20s} || {"VALOR (BTC)":^20s}|{"QTD (R$)":^20s}|{"TOTAL (R$)":^20s}')
+	print('-'*126)
+	[print(f'{formatReal(eval(a[0])):>20s}|{eval(a[1]):20.8f}|{formatReal(eval(a[0]) / eval(a[1])):>20s}||{eval(b[1]):20.8f}|{formatReal(eval(b[0])):>20s}|{formatReal(eval(b[0]) / eval(b[1])):>20s}') for a, b in zip(sell, buy)]
 
 def cancelOrder():
 	pass
